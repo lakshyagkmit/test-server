@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 
-const port = 3000;
 const app = express();
 
 app.use(cors());
@@ -15,6 +14,6 @@ app.get('/health', (req, res) => {
 	res.send({"message": "health ok!"});
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
 	console.log(`server is running on port:${port}`)
 });
